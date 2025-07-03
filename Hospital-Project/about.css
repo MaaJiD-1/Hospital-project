@@ -1,0 +1,119 @@
+ *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding: 100px 20px 30px ;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f1f1;
+        }
+        .nav-item{
+            transition: transform 0.3s ease;
+        }
+        .nav-item:hover{
+            transform: translateX(-15px);
+        }
+         html {
+            scroll-behavior: smooth;
+        }
+        .logo{
+            height: 40px;
+        }
+
+      
+       .section-one-grid img{
+        max-width: 100%;
+        border-radius: 10px;
+       }
+        .section-one h1{
+            text-align: center;
+        }
+        .section-one-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 15px;
+        }
+        @media (max-width:850px){
+            .section-one-grid{
+            display: grid;
+            grid-template-columns:  1fr;
+            row-gap: 15px;
+        }
+        }
+         .section-one-grid .column p{
+            font-size: 18px;
+            word-spacing: 3px;
+            color: rgb(77, 76, 76);
+        }
+
+        .section-two-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 15px;
+        }
+        @media (max-width:850px){
+            .section-two-grid{
+            display: grid;
+            grid-template-columns:  1fr;
+            row-gap: 15px;
+        }
+        }
+        .section-two-grid img {
+            transition: transform 0.4s linear;
+        }
+         .section-two-grid img:hover {
+            transform: translateY(-15px);
+        }
+
+         .section-two-grid .column{
+            box-shadow: 0 0 3px;
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+         .section-two-grid .column:hover{
+            box-shadow: 0 0  7px;
+        }
+        
+         .section-two-grid .column h1,img{
+            margin-bottom: 20px;
+        }
+        
+        .section-two-grid .column  p{
+           font-size: 18px;
+            color: rgb(90, 84, 84);
+        }
+        
+
+        .in{
+            height: 38px;
+            border-radius: 8px;
+            padding: 10px;
+            border: none;
+         }
+         .comment{
+            height: 60px;
+             border-radius: 5px;
+            padding: 5px;
+            border: none;
+         }
+         .contact{
+            margin-top: 20px;
+            background-color: #10002b;
+            padding: 10px 15px ;
+         }
+         .contact h1{
+            color: white;
+            text-align: center;
+         }
+         .contacts{
+            color: white;
+            transition: all 0.3s linear;
+         }
+          .contacts:hover{
+            color: red;
+            cursor: pointer;
+         }
+       

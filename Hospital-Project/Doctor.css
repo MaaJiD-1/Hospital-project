@@ -1,0 +1,98 @@
+ *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding: 130px 20px 20px ;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f1f1;
+        }
+        .nav-item{
+            transition: transform 0.3s ease;
+        }
+        .nav-item:hover{
+            transform: translateX(-15px);
+        }
+       .logo{
+        height: 40px
+       }
+       .section-one-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+       column-gap: 35px ;
+       row-gap: 25px;
+       }
+
+       @media (max-width:860px){
+          .section-one-grid{
+        display: grid;
+        grid-template-columns:  1fr 1fr;
+       column-gap: 35px ;
+       row-gap: 25px;
+       }
+       }
+
+        @media (max-width:500px){
+          .section-one-grid{
+        display: grid;
+        grid-template-columns: 1fr;
+       row-gap: 25px;
+       }
+       }
+       .column{
+         box-shadow: 0 0 4px;
+         text-align: center ;
+         transition: scale 0.4s linear;
+       }
+       .column:hover{
+        scale: 106%;
+       }
+       
+        .doctor-img {
+        max-width: 70%;
+        margin-bottom: 20px;
+        }
+        .time,
+        .work-time span {
+            color: red;
+            font-weight: bold;
+        }
+        .work-time ,
+        .department{
+            font-weight: bold;
+        }
+        h1{
+            text-align: center;
+        }
+        .in{
+            height: 38px;
+            border-radius: 8px;
+            padding: 10px;
+            border: none;
+         }
+         .comment{
+            height: 60px;
+             border-radius: 5px;
+            padding: 5px;
+            border: none;
+         }
+         .contact{
+          margin-top: 20px;
+            background-color: #10002b;
+            padding: 10px 15px ;
+         }
+         .contact h1{
+            color: white;
+            text-align: center;
+         }
+         .contacts{
+            color: white;
+            transition: all 0.3s linear;
+         }
+          .contacts:hover{
+            color: red;
+            cursor: pointer;
+         }
+
+        

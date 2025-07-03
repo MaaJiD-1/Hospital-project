@@ -1,0 +1,104 @@
+ *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding: 100px 10px 20px ;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f1f1;
+        }
+        .nav-item{
+            transition: transform 0.3s ease;
+        }
+        .nav-item:hover{
+            transform: translateX(-15px);
+        }
+        
+        .logo{
+            height: 40px;
+        }
+        .section-grid{
+             text-align: center;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        @media (max-width:840px){
+            .grid{
+            display: grid;
+            grid-template-columns:  1fr 1fr 1fr;
+        }
+        }
+
+         @media (max-width:620px){
+            .grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        }
+
+         @media (max-width:440px){
+            .grid{
+            display: grid;
+            grid-template-columns:1fr;
+        }
+        }
+        
+
+        section .image{
+           height: 90px;
+           transition: transform 0.4s linear;
+        }
+        section .image:hover{
+            transform: translateY(-20px);
+            cursor: pointer;
+        }
+        section .image,
+        .service-name {
+            margin-bottom: 20px;
+        }
+        .column{
+           padding: 30px 20px;
+            border-right: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+
+        }
+        section .read{
+            color: gray;
+            text-decoration: none;
+            transition: color 0.3s linear;
+        }
+        section .read:hover{
+            color: red;
+        }
+        .in{
+            height: 38px;
+            border-radius: 8px;
+            padding: 10px;
+            border: none;
+         }
+         .comment{
+            height: 60px;
+             border-radius: 5px;
+            padding: 5px;
+            border: none;
+         }
+         .contact{
+            margin-top: 20px;
+            background-color: #10002b;
+            padding: 10px 15px ;
+         }
+         .contact h1{
+            color: white;
+            text-align: center;
+         }
+         .contacts{
+            color: white;
+            transition: all 0.3s linear;
+         }
+          .contacts:hover{
+            color: red;
+            cursor: pointer;
+         }

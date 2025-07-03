@@ -1,0 +1,51 @@
+ *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #f1f1f1;
+             font-family: Arial, Helvetica, sans-serif;
+            padding: 100px 30px 30px;
+        }
+        .nav-item{
+            transition: transform 0.3s ease;
+        }
+        .nav-item:hover{
+            transform: translateX(-15px);
+        }
+       
+        .logo{
+            height: 40px;
+        }
+        
+         .in{
+            height: 38px;
+            border-radius: 8px;
+            padding: 10px;
+            border: none;
+         }
+         .comment{
+            height: 60px;
+             border-radius: 5px;
+            padding: 5px;
+            border: none;
+         }
+         .contact{
+            margin-top: 20px;
+            background-color: #10002b;
+            padding: 10px 15px ;
+         }
+         .contact h1{
+            color: white;
+            text-align: center;
+         }
+         .contacts{
+            color: white;
+            transition: all 0.3s linear;
+         }
+          .contacts:hover{
+            color: red;
+            cursor: pointer;
+         }
+         
