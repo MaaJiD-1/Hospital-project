@@ -92,10 +92,10 @@
       </div>
 
       <div class="col-md-6">
-        <label for="department" class="form-label">Department</label>
-        <input type="text" id="department" class="form-control">
-        <div id="department-suggestions" class="form-text"></div>
-        <span id="department-error" class="text-danger small"></span>
+        <label for="Doctor" class="form-label">Doctor</label>
+        <input type="text" id="Doctor" class="form-control">
+        <div id="Doctor-suggestions" class="form-text"></div>
+        <span id="doctor-error" class="text-danger small"></span>
       </div>
 
       <div class="col-md-6">
@@ -150,51 +150,45 @@
 </main>
 
   <script>
-        function toggleMenu() {
-            const menu = document.getElementById("menu");
-            menu.classList.toggle("show");
-        }
+      
+   const input=document.getElementById("Doctor");
+   const DoctorSuggestionBox = document.getElementById("Doctor-suggestions");
+   const DoctortList = ["Muhammad Arshad","Abdullahi Mohamud", "Ahmed Ali", "Yuusuf Abdullahi","Muhammad Abdirahiim","Abdulwali Abdulaziiz"];
+     
+    input.addEventListener("change",()=>{
+      const value=input.value.trim().toLowerCase();
+      DoctorSuggestionBox.innerHTML="";
 
-       const departmentSuggestionBox = document.getElementById("department-suggestions");
-const departmentList = ["Pediatrics", "Cardiology", "Neurology"];
+      if(value === "")
+      return
 
-department.addEventListener("input", function () {
-  const typed = department.value.trim().toLowerCase();
-  departmentSuggestionBox.innerHTML = ""; 
+      const match=DoctortList.filter(doc => doc.toLowerCase().startsWith(value));
 
-  if (typed === "") {
-    departmentSuggestionBox.style.display = "none";
-    return;
-  }
+      if(match.length === 0){
+        DoctorSuggestionBox.textContent="No doctors we found.";
+        return
+      }
 
-  const matches = departmentList.filter(d => d.toLowerCase().startsWith(typed));
+      match.forEach(doc =>{
+        const div=document.createElement("div");
+        div.textContent=doc;
+        div.style.cssText="padding:5px ; cursor:pointer";
+        DoctorSuggestionBox.appendChild(div);
 
-  if (matches.length > 0) {
-    matches.forEach(match => {
-      const item = document.createElement("div");
-      item.textContent = match;
-      item.style.padding = "6px 10px";
-      item.style.cursor = "pointer";
-
-      departmentSuggestionBox.appendChild(item);
-
-      item.addEventListener("click", () => {
-        department.value = match;
-        departmentSuggestionBox.innerHTML = "";
-        departmentSuggestionBox.style.display = "none";
+        div.addEventListener("click",()=>{
+          input.value=doc;
+          DoctorSuggestionBox.innerHTML="";
+        });
       });
 
-      
     });
-    departmentSuggestionBox.style.display = "block";
-  }
-});
+
 
   $("#form").on("submit",(x)=>{
     $("#name-error").html("");
     $("#email-error").html("");
     $("#phone-error").html("");
-    $("#department-error").html("");
+    $("#doctor-error").html("");
     $("#date-error").html("");
     $("#time-error").html("");
     
@@ -235,9 +229,9 @@ department.addEventListener("input", function () {
       x.preventDefault();
     }
 
-    //Department
-    else if($("#department").val().trim()===""){
-      $("#department-error").html("required");
+    //Doctor
+    else if($("#Doctor").val().trim()===""){
+      $("#doctor-error").html("required");
       x.preventDefault();
     }
 
