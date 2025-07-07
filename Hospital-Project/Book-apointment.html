@@ -149,7 +149,122 @@
 
 </main>
 
+  <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
 
+       const departmentSuggestionBox = document.getElementById("department-suggestions");
+const departmentList = ["Pediatrics", "Cardiology", "Neurology"];
+
+department.addEventListener("input", function () {
+  const typed = department.value.trim().toLowerCase();
+  departmentSuggestionBox.innerHTML = ""; 
+
+  if (typed === "") {
+    departmentSuggestionBox.style.display = "none";
+    return;
+  }
+
+  const matches = departmentList.filter(d => d.toLowerCase().startsWith(typed));
+
+  if (matches.length > 0) {
+    matches.forEach(match => {
+      const item = document.createElement("div");
+      item.textContent = match;
+      item.style.padding = "6px 10px";
+      item.style.cursor = "pointer";
+
+      departmentSuggestionBox.appendChild(item);
+
+      item.addEventListener("click", () => {
+        department.value = match;
+        departmentSuggestionBox.innerHTML = "";
+        departmentSuggestionBox.style.display = "none";
+      });
+
+      
+    });
+    departmentSuggestionBox.style.display = "block";
+  }
+});
+
+  $("#form").on("submit",(x)=>{
+    $("#name-error").html("");
+    $("#email-error").html("");
+    $("#phone-error").html("");
+    $("#department-error").html("");
+    $("#date-error").html("");
+    $("#time-error").html("");
+    
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+     const selectedDate = new Date($("#date").val());
+      const today = new Date();
+
+      today.setHours(0, 0, 0, 0);
+      const userTime = $("#time").val() ;
+
+    //Name
+    if($("#name").val().trim()===""){
+      $("#name-error").html("required");
+      x.preventDefault();
+    }
+
+    //Email
+    else if($("#email").val().trim()===""){
+      $("#email-error").html("required");
+      x.preventDefault();
+    }
+    else if(!emailPattern.test($("#email").val())){
+      $("#email-error").html("Enter valid email");
+      x.preventDefault();
+    }
+    
+    //Phone
+    else if($("#phone").val().trim()===""){
+      $("#phone-error").html("required");
+      x.preventDefault();
+    }
+    else if(isNaN($("#phone").val())){
+      $("#phone-error").html("Only Number");
+      x.preventDefault();
+    }
+     else if($("#phone").val().length !== 10 && $("#phone").val().length  !== 9){
+      $("#phone-error").html("Wrong Number ");
+      x.preventDefault();
+    }
+
+    //Department
+    else if($("#department").val().trim()===""){
+      $("#department-error").html("required");
+      x.preventDefault();
+    }
+
+    //Date
+    else if($("#date").val().trim()===""){
+      $("#date-error").html("required");
+      x.preventDefault();
+    }
+    else if(selectedDate < today){
+      $("#date-error").html("Please choose a date that is today or later");
+      x.preventDefault();
+    }
+
+    //Time
+     else if($("#time").val().trim()===""){
+      $("#time-error").html("required");
+      x.preventDefault();
+    }
+     else if($("#time").val() < "10:30" || $("#time").val() > "16:00" ){
+      $("#time-error").html("Please choose a time between 10:30 AM and 4:00 PM");
+      x.preventDefault();
+    }
+    
+
+  });
+       
+    </script>
   
   
 </body>
