@@ -17,6 +17,9 @@
        .logo{
         height: 40px
        }
+       h1{
+            text-align: center;
+        }
        .section-one-grid{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -62,9 +65,7 @@
         .department{
             font-weight: bold;
         }
-        h1{
-            text-align: center;
-        }
+        
         .in{
             height: 38px;
             border-radius: 8px;

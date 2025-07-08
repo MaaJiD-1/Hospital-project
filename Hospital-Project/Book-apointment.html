@@ -69,8 +69,8 @@
 </section>
 
 <section id="appointment" class="form-section mt-5 bg-light ">
-  <div class="container   ">
-    <h2 class="mb-4 text-center">Book an Appointment</h2>
+  <div class="container">
+    <h2 class="mb-4 text-center">Book an Appointment</h2>   
     <form action="#" id="form" class="row g-3 justify-content-center ">
       
       <div class="col-7 ">
@@ -81,7 +81,7 @@
 
       <div class="col-7 ">
         <label for="email" class="form-label">Email</label>
-        <input type="text" id="email" class="form-control">
+        <input type="email" id="email" class="form-control">
         <span id="email-error" class="text-danger small"></span>
       </div>
 
@@ -192,7 +192,6 @@
     $("#date-error").html("");
     $("#time-error").html("");
     
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
      const selectedDate = new Date($("#date").val());
       const today = new Date();
 
@@ -210,10 +209,7 @@
       $("#email-error").html("required");
       x.preventDefault();
     }
-    else if(!emailPattern.test($("#email").val())){
-      $("#email-error").html("Enter valid email");
-      x.preventDefault();
-    }
+   
     
     //Phone
     else if($("#phone").val().trim()===""){

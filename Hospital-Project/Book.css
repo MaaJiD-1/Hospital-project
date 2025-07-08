@@ -20,6 +20,7 @@
         .colunm{
             background-color: rgb(71, 71, 219);
             text-align: center;
+            border-radius: 4px;
         }
         .colunm h2{
             color: white;

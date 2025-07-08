@@ -1,7 +1,6 @@
  *{
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
         body{
            padding: 60px 20px 30px;
@@ -95,12 +94,8 @@
             color: white;
            background-color: rgb(8, 8, 96);
          }
-          .section-four-grid .right{
-            background-color: rgb(8, 8, 96);
-          }
-         .section-three , .section-four h1{
-            color: rgb(4, 9, 79);
-         }
+         
+         
          .in{
             height: 38px;
             border-radius: 8px;
